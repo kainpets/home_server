@@ -2,9 +2,6 @@
   "name": "home_server",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -24,5 +21,11 @@
     "drizzle-kit": "^0.31.4",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   }
 }
