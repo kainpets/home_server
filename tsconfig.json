@@ -12,6 +12,7 @@
     "target": "esnext",
     "lib": ["esnext"],
     "types": ["node"],
+    "allowSyntheticDefaultImports": true,
 
     // Other Outputs
     "sourceMap": true,
