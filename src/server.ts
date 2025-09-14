@@ -1,34 +1,18 @@
 import Fastify, { type FastifyInstance, type RouteShorthandOptions } from 'fastify'
-import { Server, IncomingMessage, ServerResponse } from 'http'
+import { photoRoutes } from './routes/photos'
 
 const server: FastifyInstance = Fastify({})
 
-const opts: RouteShorthandOptions = {
-  schema: {
-    response: {
-      200: {
-        type: 'object',
-        properties: {
-          pong: {
-            type: 'string'
-          }
-        }
-      }
-    }
-  }
-}
+server.register(photoRoutes)
 
-server.get('/ping', opts, async (request, reply) => {
+server.get('/ping', async (request, reply) => {
   return { pong: 'it worked!' }
 })
 
 const start = async () => {
   try {
     await server.listen({ port: 3000 })
-
-    const address = server.server.address()
-    const port = typeof address === 'string' ? address : address?.port
-
+    console.log('Server is running on port 3000')
   } catch (err) {
     server.log.error(err)
     process.exit(1)
