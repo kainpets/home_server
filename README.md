@@ -35,7 +35,7 @@ npm run db:migrate
 npm run dev
 ```
 
-4. Open your browser and go to `http://localhost:3000`
+4. Open your browser and go to `http://localhost:3000` or, on local network, go to http://192.168.1.10:3000
 
 ## Usage
 
