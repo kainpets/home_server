@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  home-server:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # Persist database and uploads
+      - ./database:/app/database
+      - ./uploads:/app/uploads
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:3000/ping', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

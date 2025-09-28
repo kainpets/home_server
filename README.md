@@ -1,6 +1,6 @@
 # Home Server - Photo Gallery
 
-A simple home server with photo upload and gallery functionality.
+A simple home server with photo upload and gallery functionality that can be easily deployed on your local network using Docker.
 
 ## Features
 
@@ -10,32 +10,47 @@ A simple home server with photo upload and gallery functionality.
 - 🔍 **Photo Modal**: Click any photo to view it in full size
 - 📱 **Responsive Design**: Works on desktop and mobile devices
 - ⚡ **Real-time Updates**: Automatic refresh after uploads
+- 🌐 **Network Access**: Accessible from any device on your WiFi
+- 🐳 **Docker Support**: Easy one-command deployment
 
-## Getting Started
+## 🚀 Quick Installation
 
 ### Prerequisites
+- Docker and Docker Compose installed
+- Git (to clone the repository)
 
-- Node.js (v18 or higher)
-- npm
+### One-Command Setup
 
-### Installation
-
-1. Install dependencies:
 ```bash
-npm install
+# Clone and start
+git clone <your-repo-url>
+cd home_server
+docker-compose up -d
 ```
 
-2. Run database migrations:
-```bash
-npm run db:migrate
-```
+### Access Your Gallery
+- **Local**: `http://localhost:3000`
+- **Network**: `http://[YOUR_IP]:3000`
 
-3. Start the development server:
-```bash
-npm run dev
-```
+## 🔧 Docker Commands
 
-4. Open your browser and go to `http://localhost:3000` or, on local network, go to http://192.168.1.10:3000
+```bash
+# Start the server
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop server
+docker-compose down
+
+# Restart server
+docker-compose restart
+
+# Update server
+docker-compose pull
+docker-compose up -d
+``` or, on local network, go to http://192.168.1.10:3000
 
 ## Usage
 
